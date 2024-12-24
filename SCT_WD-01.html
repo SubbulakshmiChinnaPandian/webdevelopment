@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerPulse</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar nav ul li {
+            margin: 0 10px;
+        }
+
+        .navbar nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .navbar nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .carousel {
+            height: 100vh;
+            background: linear-gradient(to right, #ff7eff, #ff7eff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 60px;
+        }
+
+        .carousel-slide {
+            display: none;
+            text-align: center;
+            max-width: 80%;
+            margin: 0 auto;
+            transition: opacity 0.5s ease;
+            color: white;
+        }
+
+        .carousel-slide.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .carousel-slide h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .carousel-slide p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .carousel-slide .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .carousel-slide .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .carousel-btn.left {
+            left: 20px;
+        }
+
+        .carousel-btn.right {
+            right: 20px;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .about, .services, .contact {
+            background: #f9f9f9;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .services {
+            background: #f1f1f1;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: left;
+        }
+
+        .contact form label {
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .contact form input, .contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact form button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact form button:hover {
+            background-color: #0056b3;
+        }
+
+        .topic {
+            background-color: #aa6b86;
+            color: white;
+            padding: 15px;
+            font-size: 1.8rem;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 999;
+        }
+
+        .main-content {
+            margin-top: 60px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="topic">
+        PowerPulse - Revolutionizing Battery Solutions
+    </div>
+    <header>
+        <div class="navbar">
+            <div class="logo">PowerPulse</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="home" class="carousel">
+        <div class="carousel-slide active">
+            <h1>Welcome to PowerPulse</h1>
+            <p>Your one-stop destination for high-performance and eco-friendly battery solutions.</p>
+            <button class="btn">Learn More About Us</button>
+        </div>
+        <div class="carousel-slide">
+            <h1>Unmatched Efficiency</h1>
+            <p>Experience the best-in-class battery life for all your devices.</p>
+            <button class="btn">Explore Now</button>
+        </div>
+        <div class="carousel-slide">
+            <h1>Eco-Friendly Solutions</h1>
+            <p>Our sustainable batteries ensure a greener tomorrow.</p>
+            <button class="btn">Know More</button>
+        </div>
+        <div class="carousel-slide">
+            <h1>Trusted by Millions</h1>
+            <p>Reliable power, anytime, anywhere for all your needs.</p>
+            <button class="btn">Join Us</button>
+        </div>
+        <button class="carousel-btn left"><</button>
+        <button class="carousel-btn right">></button>
+    </section>
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>At PowerPulse, we are committed to delivering cutting-edge battery technology with a focus on sustainability and reliability. Our mission is to empower people with innovative energy solutions.</p>
+    </section>
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <p>We provide a range of battery solutions, from portable devices to large-scale energy storage systems. Our services include custom battery design, recycling programs, and energy optimization consulting.</p>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Your email">
+
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Your message"></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const leftBtn = document.querySelector('.carousel-btn.left');
+        const rightBtn = document.querySelector('.carousel-btn.right');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        leftBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+            showSlide(currentIndex);
+        });
+
+        rightBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+            showSlide(currentIndex);
+        });
+    </script>
+</body>
+</html>
